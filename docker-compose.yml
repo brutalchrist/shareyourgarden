@@ -1,0 +1,48 @@
+version: '2.0'
+services:
+  mongodb:
+    image: 'bitnami/mongodb:3.6'
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./.mongo:/bitnami
+    labels:
+      kompose.service.type: nodeport
+    environment:
+      - MONGODB_ROOT_PASSWORD=shareyourgarden
+      - MONGODB_USERNAME=shareyourgarden
+      - MONGODB_PASSWORD=shareyourgarden
+      - MONGODB_DATABASE=shareyourgarden
+    networks:
+      app:
+        ipv4_address: 172.16.231.2
+  backend:
+    build: ./backend/.docker
+    ports: 
+      - "1337:1337"
+    volumes:
+      - ./backend:/sails
+    #command: bash -c "rm -Rf node_modules && npm install && node app.js"
+    command: bash -c "npm install && node app.js"
+    environment:
+      - NODE_ENV=develop
+    networks:
+      app:
+        ipv4_address: 172.16.231.3
+  frontend:
+    build: ./frontend/.docker/dev
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./frontend:/frontend
+    command: bash -c "npm install && npm start -- --scss"
+    networks:
+      app:
+        ipv4_address: 172.16.231.4
+networks:
+  app:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.231.0/24
+          gateway: 172.16.231.1
