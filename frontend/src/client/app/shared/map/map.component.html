@@ -1,0 +1,64 @@
+<div [attr.id]="id" class="map"></div>
+<div id="popup" class="ol-popup" #infowindow>
+    <div id="popup-header" class="ol-popup-header">
+        <div class="clasificacion" id="info-clasificacion">
+            <img src="assets/svg/educacion.svg" class="icono"/>
+        </div>
+        <div class="titulo" id="info-titulo-obra">
+            <div class="obra" >Obra jsdnjsdnjsd</div>
+            <div class="comuna">Municipalidad de Santiago</div>
+        </div>
+        <div class="estado" id="info-estado-obra">
+            <div class="cerrar"><a href="#" id="popup-closer" class="ol-popup-closer" #closer></a></div>
+            <div class="estado_label">Finalizada</div>
+        </div>
+    </div>
+
+    <div id="popup-content" class="ol-popup-content" #content>
+        <div class="body" id="popup-content-body">
+            <div class="imagen"><img src="assets/svg/infowindow.png" /></div>
+            <div class="info" id="popup-content-info">
+                <div class="monto" id="popup-content-info-monto">999.9999.999</div>
+                <div class="table" id="popup-content-info-table">
+                    <div class="fechas">
+                        <div class="fecha">
+                            <div class="target">02 FEB 2017</div>
+                            <div class="title"><i class="fa fa-calendar" aria-hidden="true"></i> INICIO</div>
+                        </div>
+                        <div class="fecha">
+                            <div class="target">02 FEB 2017</div>
+                            <div class="title"><i class="fa fa-calendar" aria-hidden="true"></i> TERMINO</div>
+                        </div>
+                        <div class="fecha">
+                            <div class="target">Sin Fecha</div>
+                            <div class="title"><i class="fa fa-refresh" aria-hidden="true"></i> ACTUALIZACIÓN</div>
+                        </div>
+                    </div>
+                    <div class="avances">
+                        <div class="avance">
+                            <div class="number">100%</div>
+                            <div class="title">AVANCE FISICO</div>
+                        </div>
+                        <div class="avance">
+                            <div class="number">98.9%</div>
+                            <div class="title">AVANCE FINANCIERO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" id="popup-content-footer">
+            <div class="rss">
+                <div class="item"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                <div class="item"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                <div class="item"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+            </div>
+            <div class="stars">
+
+            </div>
+            <div class="info">
+                <div class="button" >Más Información <i class="fa fa-info-circle" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
