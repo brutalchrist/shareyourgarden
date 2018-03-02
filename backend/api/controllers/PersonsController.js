@@ -43,8 +43,6 @@ module.exports = {
             };
 
             Persons.find(query).exec(function (error, result) {
-                console.log('result: ', result);
-                console.log('error: ', error);
                 if (error) {
                     res.status(error.status);
                     return res.json(error);
