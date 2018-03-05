@@ -7,28 +7,28 @@
 
 module.exports = {
     find: function(req, res) {
-        var poligon = req.param('poligon');
+        var polygon = req.param('polygon');
 
-        if (typeof poligon === 'undefined') {
+        if (typeof polygon === 'undefined') {
             Persons.find().exec(function (error, result) {
                 return res.json(result);
             });
         } else {
             try {
-                var coordinates = JSON.parse(poligon);
+                var coordinates = JSON.parse(polygon);
             } catch(e) {
                 res.status(409);
-                return res.json({error: 'poligon: an array was expected'});
+                return res.json({error: 'polygon: an array was expected'});
             }
 
             if (!Array.isArray(coordinates)) {
                 res.status(409);
-                return res.json({error: 'poligon: an array was expected'});
+                return res.json({error: 'polygon: an array was expected'});
             }
 
             if (coordinates.length < 4) {
                 res.status(409);
-                return res.json({error: 'poligon: a minimum of 4 points was expected'});
+                return res.json({error: 'polygon: a minimum of 4 points was expected'});
             }
 
             var query = {
