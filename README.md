@@ -38,20 +38,21 @@ gardens
 ### Run
 
 ```bash
-docker-compose up backend
+$ cd backend
+$ sails lift
 ```
 
 ### test
 
-[http://localhost:1337/](http://localhost:1337/)
+[http://localhost:1337/gardens](http://localhost:1337/gardens)
 
 ## Frontend
 
 ### Run
 
 ```bash
-cd frontend
-npm start -- --scss
+$ cd frontend
+$ npm start -- --scss
 ```
 
 ### test
