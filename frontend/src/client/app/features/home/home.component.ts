@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MapComponent } from '../../shared/map/map.component';
-import { PersonsService } from '../../services/persons/persons.service';
+import { GardensService } from '../../services/gardens/gardens.service';
 /**
 * This class represents the main application component.
 */
@@ -15,7 +15,7 @@ import { PersonsService } from '../../services/persons/persons.service';
 export class HomeComponent {
     private map: MapComponent;
 
-    constructor(private personsService: PersonsService) {
+    constructor(private gardensService: GardensService) {
     }
 
     private readyMap(map: MapComponent) {
@@ -25,12 +25,12 @@ export class HomeComponent {
             const polygon = self.map.getBounds();
             polygon.push(polygon[0]);
 
-            self.personsService.getPersonsByPolygon(polygon).subscribe(data => {
+            self.gardensService.getGardensOfPolygon(polygon).subscribe(data => {
                 self.map.clear();
-                data.forEach((element: any) => {
+                data.forEach(element => {
                     self.map.setMarker(
-                        element.gardens[0].location.coordinates[0],
-                        element.gardens[0].location.coordinates[1],
+                        element.location.coordinates[0],
+                        element.location.coordinates[1],
                         {
                             click: function (event: any, feature: any) {
                                 console.log('event: ', feature.get('opts').data);
