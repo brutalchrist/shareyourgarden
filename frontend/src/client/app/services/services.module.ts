@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { GardensService } from './gardens/gardens.service';
 import { PersonsService } from './persons/persons.service';
 import { RestService } from './rest/rest.service';
 import { MapService } from './map/map.service';
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     imports: [CommonModule, RouterModule],
     declarations: [],
-    providers:[MapService, RestService, PersonsService],
+    providers:[MapService, RestService, PersonsService, GardensService],
     exports: [CommonModule, FormsModule, RouterModule]
 })
 export class ServicesModule {
