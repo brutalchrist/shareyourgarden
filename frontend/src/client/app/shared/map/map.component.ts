@@ -47,7 +47,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     public makeMap(): Observable<any> {
         return new Observable(observe => {
             const source = new ol.layer.Tile({
-                // source: new ol.source.OSM()
                 source: new ol.source.BingMaps({
                     key: 'Ah_2iHZLi9_5pHhCZblpe6D8RPvl-KEIVNAZnyhRIW_UrUH-U31KOkeeYAFW5KAq',
                     imagerySet: 'Road'
