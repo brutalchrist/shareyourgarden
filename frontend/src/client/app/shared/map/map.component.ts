@@ -26,6 +26,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     private mouseEventInteraction: any;
     private layers: any[] = [];
     private infowin_layer: any;
+    private events: any = {};
 
     constructor(private map_service: MapService) {
         this.map_service.suscribeMap(this.id, this);
@@ -192,6 +193,13 @@ export class MapComponent implements OnInit, AfterViewInit {
                 if (typeof action === 'function')
                     action(evt, feature);
             }
+        });
+
+        this.map.addEventListener('moveend', function (evt: any) {
+            evt.preventDefault();
+
+            if (typeof self.events['moveend'] === 'function')
+                self.events['moveend'](evt);
         });
     }
 
@@ -491,5 +499,27 @@ export class MapComponent implements OnInit, AfterViewInit {
                 duration: 250
             }
         }));
+    }
+
+    public getBounds(): number[][] {
+        const extent = this.map.getView().calculateExtent();
+        return [
+            ol.proj.transform(ol.extent.getTopLeft(extent), 'EPSG:3857', 'EPSG:4326'),
+            ol.proj.transform(ol.extent.getTopRight(extent), 'EPSG:3857', 'EPSG:4326'),
+            ol.proj.transform(ol.extent.getBottomRight(extent), 'EPSG:3857', 'EPSG:4326'),
+            ol.proj.transform(ol.extent.getBottomLeft(extent), 'EPSG:3857', 'EPSG:4326')
+        ];
+    }
+
+    public addEventListener(name: string, event: any) {
+        if (typeof event === 'function') {
+            this.events[name] = event;
+        }
+    }
+
+    public removeEventListener(name: string) {
+        if (typeof this.events[name] !== 'undefined') {
+            delete this.events[name];
+        }
     }
 }

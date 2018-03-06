@@ -9,7 +9,7 @@ import { HashTable } from '../../classes/hashtable';
 * This class represents the service component.
 */
 @Injectable()
-export class PersonService {
+export class PersonsService {
     private persons: HashTable<string, any>;
 
     constructor(@Inject(RestService) private rest: RestService) {
@@ -17,7 +17,16 @@ export class PersonService {
 
     public getPersons(): Observable<any> {
         return new Observable(observe => {
-            this.rest.get('/person').subscribe(data => {
+            this.rest.get('/persons').subscribe(data => {
+                observe.next(data);
+                observe.complete();
+            });
+        });
+    }
+
+    public getPersonsByPolygon(polygon: number[][]): Observable<any> {
+        return new Observable(observe => {
+            this.rest.get('/persons?polygon=' + JSON.stringify(polygon)).subscribe(data => {
                 observe.next(data);
                 observe.complete();
             });
