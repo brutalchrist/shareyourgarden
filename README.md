@@ -8,10 +8,10 @@
 
 ## MongoDB
 
-### Run (background)
+### Run
 
 ```bash
-$ docker-compose up -d mongodb
+$ docker-compose up mongodb
 ```
 
 ### Test
