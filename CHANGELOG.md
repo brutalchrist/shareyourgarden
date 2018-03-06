@@ -1,3 +1,3 @@
 # Changelog
 
-## [Gardens](!3) (06/03/2018)
+## [Gardens](https://github.com/brutalchrist/shareyourgarden/pull/3) (06/03/2018)
