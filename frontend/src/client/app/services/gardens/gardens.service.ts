@@ -15,12 +15,12 @@ export class GardensService {
     public getGardensOfPolygon(polygon: number[][]): Observable<Garden[]> {
         return new Observable(observe => {
             this.rest.get('/gardens?polygon=' + JSON.stringify(polygon)).subscribe((data: any[]) => {
-                let gardens: Garden[] = [];
+                const gardens: Garden[] = [];
 
                 data.forEach((element: Garden) => {
                     gardens.push(new Garden(element));
                 });
-                
+
                 observe.next(gardens);
                 observe.complete();
             });

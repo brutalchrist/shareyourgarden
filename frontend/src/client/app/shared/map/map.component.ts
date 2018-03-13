@@ -490,22 +490,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         this.map.getView().fit(extent, this.map.getSize());
     }
 
-    private infowin() {
-        const self = this;
-        /**
-        * Add a click handler to hide the popup.
-        * @return {boolean} Don't follow the href.
-        */
-        self.infowin_layer = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
-            element: self.infowindow.nativeElement,
-            autoPan: true,
-            map: this.map,
-            autoPanAnimation: {
-                duration: 250
-            }
-        }));
-    }
-
     public getBounds(): number[][] {
         const extent = this.map.getView().calculateExtent();
         return [
@@ -526,5 +510,21 @@ export class MapComponent implements OnInit, AfterViewInit {
         if (typeof this.events[name] !== 'undefined') {
             delete this.events[name];
         }
+    }
+
+    private infowin() {
+        const self = this;
+        /**
+        * Add a click handler to hide the popup.
+        * @return {boolean} Don't follow the href.
+        */
+        self.infowin_layer = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+            element: self.infowindow.nativeElement,
+            autoPan: true,
+            map: this.map,
+            autoPanAnimation: {
+                duration: 250
+            }
+        }));
     }
 }

@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     imports: [CommonModule, RouterModule],
     declarations: [],
-    providers:[MapService, RestService, GardensService],
+    providers: [MapService, RestService, GardensService],
     exports: [CommonModule, FormsModule, RouterModule]
 })
 export class ServicesModule {

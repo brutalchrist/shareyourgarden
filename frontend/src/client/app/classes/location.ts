@@ -2,7 +2,7 @@
 * This class represents the class definition.
 */
 export class Location {
-    public type: "Point";
+    public type: 'Point';
     public coordinates: number[];
 
     constructor(data: any = null) {
