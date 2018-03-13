@@ -49,9 +49,9 @@ export class MapComponent implements OnInit, AfterViewInit {
             const source = new ol.layer.Tile({
                 source: new ol.source.BingMaps({
                     key: 'Ah_2iHZLi9_5pHhCZblpe6D8RPvl-KEIVNAZnyhRIW_UrUH-U31KOkeeYAFW5KAq',
-                    imagerySet: 'Road'
+                    imagerySet: 'Road',
                     // imagerySet: 'AerialWithLabels'
-                    // maxZoom: 19
+                    maxZoom: 19
                   })
             });
 
