@@ -2,14 +2,14 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/build-optimizer@^0.3.0":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.3.1.tgz#6a26a46c58858c7b67833c6d8a81198fa17d23e7"
+"@angular-devkit/build-optimizer@^0.4.0":
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.4.9.tgz#ee1c6e6a97142f0eb8eb965c4e06d86f57af90ee"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
-    typescript "~2.6.2"
-    webpack-sources "^1.0.1"
+    typescript "~2.7.2"
+    webpack-sources "^1.1.0"
 
 "@angular/animations@^5.2.3":
   version "5.2.5"
@@ -392,10 +392,6 @@
     "@types/gulp" "*"
     "@types/node" "*"
 
-"@types/selenium-webdriver@^3.0.8":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.8.tgz#83de9dd7aaf25f7fbd967c0d4fcc8112746dbf31"
-
 "@types/serve-static@*":
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.1.tgz#1d2801fa635d274cd97d4ec07e26b21b44127492"
@@ -467,9 +463,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/yargs@^10.0.0":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-10.0.2.tgz#cc4ea921877874d1261e2c44b89807bc836e1b12"
+"@types/yargs@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-11.0.0.tgz#124b9ed9c65b7091cc36da59ae12cbd47d8745ea"
 
 JSONStream@^1.0.3:
   version "1.3.2"
@@ -2688,9 +2684,9 @@ custom-event@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.1.tgz#5d02a46850adf1b4a317946a3928fccb5bfd0425"
 
-cypress@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-1.4.2.tgz#d957d631617aa87e64a7eae71502f2e175076638"
+cypress@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-2.1.0.tgz#a8bd7d9b89c38a1e380db83b57d9bba0dbb95ba4"
   dependencies:
     "@cypress/listr-verbose-renderer" "0.4.1"
     "@cypress/xvfb" "1.1.3"
@@ -8130,9 +8126,9 @@ rollup@^0.36.3:
   dependencies:
     source-map-support "^0.4.0"
 
-rollup@~0.55.0:
-  version "0.55.5"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.5.tgz#2f88c300f7cf24b5ec2dca8a6aba73b04e087e93"
+rollup@~0.56.0:
+  version "0.56.5"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.56.5.tgz#40fe3cf0cd1659d469baad11f4d5b6336c14ce84"
 
 rsvp@^3.0.13:
   version "3.6.2"
@@ -9376,9 +9372,9 @@ typescript@^2.4.2, typescript@^2.4.x, typescript@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
 
-typescript@~2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+typescript@~2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
 
 ua-parser-js@0.7.12:
   version "0.7.12"
@@ -9757,7 +9753,7 @@ watchr@2.6.x:
     taskgroup "^5.0.1"
     typechecker "^4.3.0"
 
-webpack-sources@^1.0.1:
+webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.1.0.tgz#a101ebae59d6507354d71d8013950a3a8b7a5a54"
   dependencies:
