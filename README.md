@@ -4,7 +4,12 @@
 
 ## Dependencies
 
-- Install [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Sails](https://sailsjs.com/)
+
+```bash
+$ yarn global add sails
+```
 
 ## MongoDB
 
@@ -17,7 +22,7 @@ $ docker-compose up mongodb
 ### Test
 
 ```bash
-$ mongo 172.16.231.2:27017/shareyourgarden -u shareyourgarden -p shareyourgarden
+$ mongo 127.0.0.1:27017/shareyourgarden -u shareyourgarden -p shareyourgarden
 ```
 
 ### Data
@@ -35,10 +40,16 @@ gardens
 
 ## Backend
 
-### Run
+### Setup
 
 ```bash
 $ cd backend
+$ yarn install
+```
+
+### Run
+
+```bash
 $ sails lift
 ```
 
@@ -48,11 +59,17 @@ $ sails lift
 
 ## Frontend
 
-### Run
+### Setup
 
 ```bash
 $ cd frontend
-$ npm start -- --scss
+$ yarn install
+```
+
+### Run
+
+```bash
+$ yarn run start
 ```
 
 ### test
