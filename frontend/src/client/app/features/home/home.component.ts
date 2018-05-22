@@ -36,7 +36,6 @@ export class HomeComponent {
                         {
                             click: function (event: any, feature: any) {
                                 self.current_garden = new Garden(feature.get('opts').data);
-                                console.log('event: ', feature.get('opts').data);
                             },
                             data: element
                         }
