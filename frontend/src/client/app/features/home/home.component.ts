@@ -23,7 +23,7 @@ export class HomeComponent {
     private readyMap(map: MapComponent) {
         this.map = map;
         const self = this;
-        this.map.addEventListener('moveend', function(event: any) {
+        this.map.addEventListener('moveend', (event: any) => {
             const polygon = self.map.getBounds();
             polygon.push(polygon[0]);
 
@@ -34,7 +34,7 @@ export class HomeComponent {
                         element.location.coordinates[0],
                         element.location.coordinates[1],
                         {
-                            click: function (event: any, feature: any) {
+                            click: (event: any, feature: any) => {
                                 self.current_garden = new Garden(feature.get('opts').data);
                             },
                             data: element
