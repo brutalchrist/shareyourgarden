@@ -60,13 +60,13 @@ $ yarn start
 
 ```bash
 $ cd frontend
-$ yarn install
+$ yarn
 ```
 
 ### Run
 
 ```bash
-$ yarn run start
+$ yarn dev
 ```
 
 ### test
