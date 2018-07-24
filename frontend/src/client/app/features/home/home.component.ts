@@ -35,7 +35,15 @@ export class HomeComponent {
                         element.location.coordinates[1],
                         {
                             click: (event: any, feature: any) => {
-                                self.current_garden = new Garden(feature.get('opts').data);
+                                if (typeof self.current_garden === 'undefined') {
+                                    self.current_garden = new Garden(feature.get('opts').data);
+                                } else {
+                                    if (self.current_garden.location.coordinates !== feature.get('opts').data.location.coordinates) {
+                                        self.current_garden = new Garden(feature.get('opts').data);
+                                    } else {
+                                        self.current_garden = undefined;
+                                    }
+                                }
                             },
                             data: element
                         }
