@@ -1,0 +1,26 @@
+.infogarden {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 400px;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        padding: 20px 20px 10px 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .owner {
+        padding: 10px 20px;
+    }
+
+    .products {
+        padding: 10px 20px;
+    }
+}

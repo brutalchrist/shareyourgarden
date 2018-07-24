@@ -518,6 +518,7 @@ export class SeedConfig {
       // For test config
       'dist/dev/': '/base/dist/dev/',
       '': 'node_modules/',
+      'angular-hashtable': 'node_modules/angular-hashtable/bundles/angular-hashtable.umd.js',
     },
     packages: {
       [this.BOOTSTRAP_DIR]: {

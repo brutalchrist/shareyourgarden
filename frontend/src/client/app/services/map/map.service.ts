@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HashTable } from 'angular-hashtable';
 
-import { HashTable } from '../../classes/hashtable';
 import { MapComponent } from '../../shared/map/map.component';
 
 /**

@@ -4,6 +4,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ServicesModule } from './services/services.module';
 import { FeaturesModule } from './features/features.module';
@@ -13,7 +14,7 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     imports: [BrowserModule, HttpClientModule, AppRoutingModule, SharedModule.forRoot(),
-        ServicesModule, FeaturesModule, PipesModule, DirectivesModule],
+        ServicesModule, FeaturesModule, PipesModule, DirectivesModule, BrowserAnimationsModule],
     declarations: [AppComponent],
     providers: [{
         provide: APP_BASE_HREF,
