@@ -11,7 +11,7 @@
 $ yarn global add sails
 ```
 
-## MongoDB
+## MongoDB (optional)
 
 ### Run
 
@@ -42,15 +42,12 @@ gardens
 
 ### Setup
 
-```bash
-$ cd backend
-$ yarn install
-```
+View [backend documentation](https://github.com/brutalchrist/shareyourgarden/tree/master/backend)
 
 ### Run
 
 ```bash
-$ sails lift
+$ yarn start
 ```
 
 ### test
