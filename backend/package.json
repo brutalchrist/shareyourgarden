@@ -14,7 +14,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "sails lift",
+    "start": "node app.js --prod",
     "production": "node app.js --prod"
   },
   "main": "app.js",
