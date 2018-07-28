@@ -14,7 +14,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js --prod",
+    "start": "node app.js",
     "production": "node app.js --prod"
   },
   "main": "app.js",
