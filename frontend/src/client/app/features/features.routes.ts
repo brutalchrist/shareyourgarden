@@ -5,15 +5,10 @@ import { HomeComponent } from './home/home.component';
 export const FeaturesRoutes: Route[] = [
     {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'home'
-    },
-    {
-        path: '',
         component: IndexComponent,
         children: [
             {
-                path: 'home',
+                path: '',
                 component: HomeComponent
             }
         ],
