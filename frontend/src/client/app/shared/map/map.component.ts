@@ -31,6 +31,13 @@ export class MapComponent implements OnInit, AfterViewInit {
     constructor(private map_service: MapService) {
         this.map_service.suscribeMap(this.id, this);
         this.zoom = 14;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.map.getView().setCenter(
+                    ol.proj.transform([position.coords.longitude, position.coords.latitude], 'EPSG:4326', 'EPSG:3857')
+                );
+            });
+        }
         this.makeMap().subscribe(data => {
             this.interactions();
         });
@@ -52,7 +59,7 @@ export class MapComponent implements OnInit, AfterViewInit {
                     imagerySet: 'Road',
                     // imagerySet: 'AerialWithLabels'
                     maxZoom: 19
-                  })
+                })
             });
 
             this.map = new ol.Map({
@@ -65,7 +72,6 @@ export class MapComponent implements OnInit, AfterViewInit {
                     rotate: true
                 }),
                 view: new ol.View({
-                    center: ol.proj.fromLonLat([-70.6506, -33.4372]),
                     zoom: this.zoom
                 })
             });
@@ -78,7 +84,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this.map.setTarget(this.id);
         this.OnReady.emit(this);
-        this.infowin();
     }
 
     public setLatLng(lat: number, lng: number) {
@@ -510,21 +515,5 @@ export class MapComponent implements OnInit, AfterViewInit {
         if (typeof this.events[name] !== 'undefined') {
             delete this.events[name];
         }
-    }
-
-    private infowin() {
-        const self = this;
-        /**
-        * Add a click handler to hide the popup.
-        * @return {boolean} Don't follow the href.
-        */
-        self.infowin_layer = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
-            element: self.infowindow.nativeElement,
-            autoPan: true,
-            map: this.map,
-            autoPanAnimation: {
-                duration: 250
-            }
-        }));
     }
 }
