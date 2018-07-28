@@ -14,5 +14,9 @@ export const FeaturesRoutes: Route[] = [
         ],
         //ROUTER CHILDREN LIMIT (NOT REMOVE - CLI COMPONENT)
         canActivate: []
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
