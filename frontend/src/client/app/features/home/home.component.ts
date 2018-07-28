@@ -55,7 +55,7 @@ export class HomeComponent {
 
     private close(close: boolean) {
         if (close) {
-            this.current_garden = null;
+            this.current_garden = undefined;
         }
     }
 }
